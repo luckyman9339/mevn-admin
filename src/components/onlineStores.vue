@@ -123,7 +123,7 @@ export default {
     },
      methods:{
         addToApi(store){
-            axios.post('http://thejasshop.com:5000/online_stores',store)
+            axios.post('http://localhost:5000/online_stores',store)
             .then((response)=>{
                 console.log(response);
             })

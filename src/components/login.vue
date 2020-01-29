@@ -42,7 +42,7 @@ export default {
             email:this.email,
             password:this.password
           }
-            axios.post('http://thejasshop.com:5000/store/login',{email:userDetails.email,password:userDetails.password})
+            axios.post('http://localhost:5000/store/login',{email:userDetails.email,password:userDetails.password})
             .then((response)=>{
                 this.$store.dispatch('login',{response})
                 this.$router.push('/addproduct')

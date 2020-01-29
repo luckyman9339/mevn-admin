@@ -58,7 +58,7 @@ export default {
     },
 
     created(){
-        axios.get('http://thejasshop.com:5000/stores')
+        axios.get('http://localhost:5000/stores')
         .then((response)=>{
             const data = response.data
             this.tableData = data

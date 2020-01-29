@@ -191,7 +191,7 @@ export default {
         
      
           const axiosInstance = axios.create({
-          baseURL: 'http://thejasshop.com:5000/',
+          baseURL: 'http://localhost:5000/',
           
          
         });

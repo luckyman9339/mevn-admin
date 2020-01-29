@@ -19,12 +19,12 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path:'/',component:home},
-    {path:'/bannerupload',component:bannerU},
-    {path:'/list_stores',component:storesList},
-    {path:'/addstore',component:storeAdd},
-    {path:'/location_management',component:locationManagement},
-    {path:'/addproduct',component:productAdd, 
+    {path:'/adminpanel/dashboard',component:home},
+    {path:'/adminpanel/bannerupload',component:bannerU},
+    {path:'/adminpanel/list_stores',component:storesList},
+    {path:'/adminpanel/addstore',component:storeAdd},
+    {path:'/adminpanel/location_management',component:locationManagement},
+    {path:'/adminpanel/addproduct',component:productAdd, 
     beforeEnter:(to,from,next)=>{
       if(!localStorage.getItem('token')){
         next('/store/login')
@@ -33,17 +33,17 @@ export default new Router({
       }
     }
   },
-    {path:'/product_catalogue',component:globalProducts},
-    {path:'/globalcatalogue',component:globalcatalogue},
-    {path:'/store/login',component:login,beforeLeave:(to,from,next)=>{
+    {path:'/adminpanel/product_catalogue',component:globalProducts},
+    {path:'/adminpanel/globalcatalogue',component:globalcatalogue},
+    {path:'/adminpanel/store/login',component:login,beforeLeave:(to,from,next)=>{
       if(store.state.token){
-        next('/addproduct')
+        next('/adminpanel/addproduct')
       }else{
         next()
       }
     }},
-    {path:"/add_online_vendor",component:onlineStores},
-    {path:"/add_online_product",component:onlineproducts},
+    {path:"/adminpanel/add_online_vendor",component:onlineStores},
+    {path:"/adminpanel/add_online_product",component:onlineproducts},
     {path:'*',component:pageNotFound}
     
   ],

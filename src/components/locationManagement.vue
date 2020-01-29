@@ -53,7 +53,7 @@ export default {
     methods:{
       addToApi(location){
         
-        axios.post('http://thejasshop.com:5000/location_management',location)
+        axios.post('http://localhost:5000/location_management',location)
         .then((res)=>{
           console.log(res)
         })

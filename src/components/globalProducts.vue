@@ -34,9 +34,9 @@
       </v-icon>
       </template>
 
-      <template v-slot:footer>
-      <v-toolbar flat color="white">
-    <v-dialog v-model="dialog" max-width="1000px" >
+      <template v-slot:footer >
+      <v-toolbar flat color="white" >
+    <v-dialog v-model="dialog" max-width="60%" content-class="dialog" >
       <v-card>
      <v-card-text>
               <v-container style="margin-top=7%">
@@ -262,7 +262,7 @@ export default {
       
         addToApi(product){
           const axiosInstance = axios.create({
-          baseURL: 'http://thejasshop.com:5000/',
+          baseURL: 'http://localhost:5000/',
          
         });
         axiosInstance({method:"POST",
@@ -278,7 +278,7 @@ export default {
       }  
       },
      created(){
-        axios.get('http://thejasshop.com:5000/gcdisplay')
+        axios.get('http://localhost:5000/gcdisplay')
         .then((response)=>{
             const data = response.data
             
@@ -296,4 +296,5 @@ export default {
    margin:7% 3%; 
    /* width: 50% !important;  */
 }
+
 </style>

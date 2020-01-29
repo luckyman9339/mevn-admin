@@ -20,8 +20,8 @@
                     
     <div class="container-fluid">
         <div class="d-flex flex-sm-row">
-            <div class="col-md-2 col-sm-2 col-lg-2" v-for="file in files" v-bind:key="file._id"  >
-                <img class="img-fluid" :src="'http://thejasshop.com:5000/bannerupload/'+file._id" style="width:100%" > 
+            <div class="col-md-1 col-sm-1 col-lg-1" v-for="file in files" v-bind:key="file._id"  >
+                <img class="img-fluid" :src="'http://localhost:5000/bannerupload/'+file._id" style="width:100%" > 
                 <button class="btn btn-danger" @click="deleteImage(file._id)">Delete</button>
             </div>
         </div>
@@ -38,9 +38,10 @@ export default {
         return{
             files:''
         }
+        
     },
     created () {
-    axios.get('http://thejasshop.com:5000/bannerupload')
+    axios.get('http://localhost:5000/bannerupload')
       .then(res => {
         const data = res.data
         this.files=data
@@ -48,7 +49,7 @@ export default {
   },
   methods:{
       deleteImage(filename){
-          axios.delete('http://thejasshop.com:5000/bannerupload/delete/'+filename)
+          axios.delete('http://localhost:5000/bannerupload/delete/'+filename)
           window.location.reload()
   
       },
@@ -57,6 +58,7 @@ export default {
       }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
